@@ -206,7 +206,6 @@ public class GamePannel extends javax.swing.JPanel {
             moveable_ind.add(0);
             if(a == 1)
                 good_ind.add(0);
-            System.out.println("exit down : " + a);
         }
         if(vboard[vplayerY][vplayerX+1]==2){//rght
             b=userVirtualMove(playerY,playerX+1);
@@ -214,7 +213,6 @@ public class GamePannel extends javax.swing.JPanel {
             moveable_ind.add(1);
             if(b == 1)
                 good_ind.add(1);
-            System.out.println("exit right : " + b);
         }
         if(vboard[vplayerY-1][vplayerX]==2){//up
             c=userVirtualMove(playerY-1,playerX);
@@ -222,7 +220,6 @@ public class GamePannel extends javax.swing.JPanel {
             moveable_ind.add(2);
             if(c == 1)
                 good_ind.add(2);
-            System.out.println("exit up : " + c);
         }
         if(vboard[vplayerY][vplayerX-1]==2){//left
             d=userVirtualMove(playerY,playerX-1);
@@ -230,7 +227,6 @@ public class GamePannel extends javax.swing.JPanel {
             moveable_ind.add(3);
             if(d == 1)
                 good_ind.add(3);
-            System.out.println("exit left : " + d);
         }
         
         
@@ -238,8 +234,6 @@ public class GamePannel extends javax.swing.JPanel {
             int rand=(((int)(random()*100))%moveable_ind.size());
             if(moveable_ind.get(rand)==0)
                 rand=(((int)(random()*100))%moveable_ind.size());
-            System.out.println(rand);
-            System.out.println(moveable_ind.get(rand));
 
             switch(moveable_ind.get(rand)){
                 case 0:
@@ -269,9 +263,6 @@ public class GamePannel extends javax.swing.JPanel {
         }
         else{
             int rand=(((int)(random()*100))%good_ind.size());
-            System.out.println("game is on !!!!");
-            System.out.println(rand);
-            System.out.println(good_ind.get(rand));
 
             switch(good_ind.get(rand)){
                 case 0:
@@ -419,18 +410,9 @@ public class GamePannel extends javax.swing.JPanel {
             }
         }
         else{
-            System.out.println("bot");
+            System.out.println("bot move");
         }
     }//calls updateBoard if key recognised
-    
-    public void debug_print(){
-        for(int i=0;i<10;i++){
-            for(int j=0;j<10;j++){
-                System.out.print(vboard[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
